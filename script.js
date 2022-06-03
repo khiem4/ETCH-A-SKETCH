@@ -1,37 +1,43 @@
 const container = document.querySelector('#container');
-let horizontal;
-let vertical;
+const node = document.createElement('div');
+const button = document.createElement('button');
+button.textContent = 'Number of grid';
+button.addEventListener('click', gridNumber);
+node.appendChild(button);
+document.body.appendChild(node);
 
-function height() {
-    vertical = document.createElement('div');
-    vertical.classList.add('div');
-    vertical.addEventListener("mouseenter", function (e) {
-        e.target.style.backgroundColor = 'yellow';
-    });
-    vertical.addEventListener("mouseleave", function (e) {
-        e.target.style.backgroundColor = "white";
-    });
-    container.appendChild(vertical);
+
+
+function makeRows() {
+    let number = prompt();
+    container.style.setProperty('--grid-rows', number);
+    container.style.setProperty('--grid-cols', number);
+    for (let i = 0; i < (number * number); i++) {
+        let cell = document.createElement("div");
+        cell.innerText = (i + 1);
+        cell.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = 'yellow';
+        });
+        container.appendChild(cell).className = "grid";
+    };
 }
 
-function width() {
-    horizontal = document.createElement('div');
-    horizontal.classList.add('div');
-    horizontal.addEventListener('mouseenter', function (e) {
-        e.target.style.backgroundColor = 'yellow';
-    });
-    horizontal.addEventListener("mouseleave", function (e) {
-        e.target.style.backgroundColor = "white";
-    });
-    container.appendChild(horizontal);
+function gridNumber() {
+    let grid = makeRows();
+    if (grid > 100) return grid = 100;
 }
 
-for (let i = 0; i < 16; i++) {
-    height();
-    for (let j = 0; j < 16; j++) {
-        width();
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

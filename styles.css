@@ -1,16 +1,21 @@
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
 #container {
     display: grid;
-    grid-template-columns: repeat(16, 40px);
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+    width: 700px;
+    height: 700px;
+    margin-left: 300px;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 
-.div {
+.grid {
     border-style: solid;
-    border-color: red;
-    border-width: 1px;
-}
-
-.cell {
-    border-style: solid;
-    border-color: red;
-    border-width: 1px;
+    border-color: black;
 }
