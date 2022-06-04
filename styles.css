@@ -4,6 +4,8 @@
 }
 
 #container {
+    position: absolute;
+    top: 50px;
     display: grid;
     border-style: solid;
     border-color: black;
@@ -18,4 +20,9 @@
 .grid {
     border-style: solid;
     border-color: black;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
 }

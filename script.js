@@ -2,13 +2,17 @@ const container = document.querySelector('#container');
 const node = document.createElement('div');
 const button = document.createElement('button');
 button.textContent = 'Number of grid';
-button.addEventListener('click', gridNumber);
+button.addEventListener('click', makeRows);
 node.appendChild(button);
-document.body.appendChild(node);
+document.body.appendChild(node).classList.add('button');
 
 
+function clear() {
+    container.innerHTML = '';
+}
 
 function makeRows() {
+    clear();
     let number = prompt();
     container.style.setProperty('--grid-rows', number);
     container.style.setProperty('--grid-cols', number);
@@ -26,8 +30,6 @@ function gridNumber() {
     let grid = makeRows();
     if (grid > 100) return grid = 100;
 }
-
-
 
 
 
