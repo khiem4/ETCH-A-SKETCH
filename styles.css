@@ -1,6 +1,7 @@
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
+    background-color: cornsilk;
 }
 
 #container {
@@ -17,6 +18,8 @@
     grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 
+
+
 .grid {
     border-style: solid;
     border-color: black;
@@ -24,7 +27,12 @@
     max-height: 100%;
 }
 
-.button {
+#top {
     display: flex;
     justify-content: center;
+}
+
+.button {
+    margin-right: 20px;
+    font-weight: bold;
 }
