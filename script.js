@@ -1,10 +1,17 @@
 const container = document.querySelector('#container');
 const node = document.createElement('div');
 const button = document.createElement('button');
+const clearBtn = document.createElement('button');
 button.textContent = 'Number of grid';
 button.addEventListener('click', makeGrid);
+clearBtn.textContent = "Clear";
+clearBtn.addEventListener('click', clear);
 node.appendChild(button);
-document.body.appendChild(node).classList.add('button');
+node.appendChild(clearBtn);
+document.body.appendChild(node).id = ('top');
+button.classList.toggle('button');
+clearBtn.classList.toggle('clear');
+
 
 
 function clear() {
@@ -18,9 +25,8 @@ function makeGrid() {
     container.style.setProperty('--grid-cols', number);
     for (let i = 0; i < (number * number); i++) {
         let cell = document.createElement("div");
-        cell.innerText = (i + 1);
         cell.addEventListener('mouseover', (e) => {
-            e.target.style.backgroundColor = 'yellow';
+            e.target.style.backgroundColor = 'black';
         });
         container.appendChild(cell).className = "grid";
     };
